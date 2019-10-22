@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2-hudson-740-. --><xs:schema xmlns:tns="http://trabalho1.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://trabalho1.org/">
+
+<xs:element name="buscaPublicacaoPorAno" type="tns:buscaPublicacaoPorAno" />
+
+<xs:element name="buscaPublicacaoPorAnoResponse" type="tns:buscaPublicacaoPorAnoResponse" />
+
+<xs:element name="buscaPublicacaoPorTitulo" type="tns:buscaPublicacaoPorTitulo" />
+
+<xs:element name="buscaPublicacaoPorTituloResponse" type="tns:buscaPublicacaoPorTituloResponse" />
+
+<xs:complexType name="buscaPublicacaoPorTitulo">
+<xs:sequence>
+<xs:element name="titulo" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscaPublicacaoPorTituloResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:publicacao" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="publicacao">
+<xs:sequence>
+<xs:element name="anoPublicacao" type="xs:int" />
+<xs:element name="id" type="xs:int" />
+<xs:element name="paginaFinal" type="xs:int" />
+<xs:element name="paginaInicial" type="xs:int" />
+<xs:element name="titulo" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscaPublicacaoPorAno">
+<xs:sequence>
+<xs:element name="ano" type="xs:int" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscaPublicacaoPorAnoResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:publicacao" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
